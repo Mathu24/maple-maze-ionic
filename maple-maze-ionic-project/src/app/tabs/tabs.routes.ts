@@ -12,19 +12,24 @@ export const routes: Routes = [
           import('../tab1/tab1.page').then((m) => m.Tab1Page),
       },
       {
-        path: 'tab2',
-        loadComponent: () =>
-          import('../tab2/tab2.page').then((m) => m.Tab2Page),
-      },
-      {
-        path: 'tab3',
-        loadComponent: () =>
-          import('../tab3/tab3.page').then((m) => m.Tab3Page),
-      },
-      {
         path: 'camera',
         loadComponent: () =>
           import('../camera/camera.page').then((m) => m.CameraPage),
+      },
+      {
+        path: 'geolocation',
+        loadComponent: () =>
+          import('../geolocation/geolocation.page').then((m) => m.GeolocationPage),
+      },
+      {
+        path: 'battery',
+        loadComponent: () =>
+          import('../battery/battery.page').then((m) => m.BatteryPage),
+      },
+      {
+        path: 'walk',
+        loadComponent: () =>
+          import('../walk/walk.page').then((m) => m.WalkPage),
       },
       {
         path: '',

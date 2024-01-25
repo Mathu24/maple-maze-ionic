@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {IonHeader, IonToolbar, IonTitle, IonContent, IonButton} from '@ionic/angular/standalone';
+import {IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonAlert} from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import {Router} from "@angular/router";
 
@@ -15,8 +15,10 @@ import {Router} from "@angular/router";
     IonContent,
     ExploreContainerComponent,
     IonButton,
+    IonAlert,
   ],
 })
+
 export class Tab1Page {
   router = inject(Router);
   constructor(/*private router: Router*/) {}
@@ -25,4 +27,19 @@ export class Tab1Page {
     // localhost:8100/tabs/camera
     await this.router.navigate(['tabs', 'camera']);
   }
+
+
+  public alertButtons: string[] = ['Weiter'];
+  public alertInputs: any[] = [
+    {
+      placeholder: 'Spielername',
+    },
+  ];
+
+  nextCameraButton() {
+    this.router.navigate(['camera'])
+  }
+
+
+
 }

@@ -8,5 +8,22 @@ export const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.routes').then((m) => m.routes),
-  }
+  },
+  {
+    path: 'geolocation',
+    loadComponent: () => import('./geolocation/geolocation.page').then( m => m.GeolocationPage)
+  },
+  {
+    path: 'battery',
+    loadComponent: () => import('./battery/battery.page').then( m => m.BatteryPage)
+  },
+  {
+    path: 'turnaround',
+    loadComponent: () => import('./turnaround/turnaround.page').then( m => m.TurnaroundPage)
+  },
+  {
+    path: 'walk',
+    loadComponent: () => import('./walk/walk.page').then( m => m.WalkPage)
+  },
+
 ];

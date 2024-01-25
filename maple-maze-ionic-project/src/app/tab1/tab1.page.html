@@ -14,6 +14,15 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-button (click)="navigateToCamera()">Nav</ion-button>
+  <ion-button id="startAlert" color="danger" shape="round" >Start</ion-button>
+  <ion-alert
+    trigger="startAlert"
+    [buttons]="alertButtons"
+    [inputs]="alertInputs"
+  >
+  </ion-alert>
+
+
+  <ion-button id="leaderboardButton" color="danger" shape="round">Leaderboard</ion-button>
 
 </ion-content>
