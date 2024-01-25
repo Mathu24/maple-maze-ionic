@@ -1,13 +1,21 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>battery</ion-title>
+    <ion-title>
+      Batterie
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">battery</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-button (click)="checkBatteryStatus()">Check</ion-button>
+
+  <ion-item *ngIf="isCharging !== undefined">
+    <ion-label>Ladezustand:</ion-label>
+    <ion-text>{{ isCharging ? 'Am Laden' : 'Nicht am Laden' }}</ion-text>
+  </ion-item>
+
+  <ion-item *ngIf="batteryLevel !== undefined">
+    <ion-label>Batteriestand:</ion-label>
+    <ion-text>{{ batteryLevel }}%</ion-text>
+  </ion-item>
 </ion-content>

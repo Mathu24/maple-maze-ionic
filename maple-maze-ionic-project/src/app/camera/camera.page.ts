@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-import { Camera, CameraResultType } from '@capacitor/camera';
+import {AlertController, IonicModule} from '@ionic/angular';
+import {Camera, CameraResultType, CameraSource} from '@capacitor/camera';
 import {Router} from "@angular/router";
 
 @Component({
@@ -14,20 +14,46 @@ import {Router} from "@angular/router";
 })
 
 
-export class CameraPage{
-  imageSrc?: string
- takePicture = async () => {
-   const image = await Camera.getPhoto({
-     quality: 90,
-     allowEditing: false,
-     resultType: CameraResultType.Uri
-   });
-   this.imageSrc = image.webPath
- }
-constructor(private router: Router) {
-}
- nextButton() {
-      this.router.navigate(['tabs/geolocation'])
- }
+export class CameraPage {
+  imageSrc?: string;
+  private router: any;
+
+  constructor(private alertController: AlertController) {}
+
+  async takePicture() {
+    const alert = await this.alertController.create({
+      header: 'Kamerazugriff',
+      message: 'Möchten Sie der App Zugriff auf Ihre Kamera gewähren?',
+      buttons: [
+        {
+          text: 'Abbrechen',
+          role: 'cancel',
+          cssClass: 'secondary',
+        },
+        {
+          text: 'Zustimmen',
+          handler: () => {
+            this.captureImage();
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+  }
+
+  async captureImage() {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: false,
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+    });
+
+    this.imageSrc = image.webPath;
+  }
+  nextButton() {
+    this.router.navigate(['tabs/geolocation'])
+  }
 
 }

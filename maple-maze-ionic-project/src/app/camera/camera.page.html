@@ -10,10 +10,13 @@
       <ion-title size="large">camera</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-content>
+    <ion-button (click)="takePicture()">Bild aufnehmen</ion-button>
 
 
-  <ion-button shape="round" (click)="takePicture()">Camera</ion-button>
-
+    <ion-img [src]="imageSrc" *ngIf="imageSrc"></ion-img>
     <ion-button shape="round" (click)="nextButton()">Next</ion-button>
+  </ion-content>
+
 
 </ion-content>

@@ -1,13 +1,16 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>walk</ion-title>
+    <ion-title>
+      Walk
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">walk</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-label>Gesamte Strecke</ion-label>
+      <ion-text>{{ totalDistance.toFixed(2) }} Meter</ion-text>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
