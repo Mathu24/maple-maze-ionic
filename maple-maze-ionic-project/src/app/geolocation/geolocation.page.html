@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Geolocation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Geolocation</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-button shape="round" (click)="printCurrentPosition()">Location</ion-button>
+
+  <ion-card *ngIf="distanceToTarget !== null">
+    <ion-card-content>
+      <p>Distance to target: {{ distanceToTarget.toFixed(2) }} meters</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

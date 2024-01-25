@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Camera, CameraResultType } from '@capacitor/camera';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-camera',
@@ -11,6 +12,8 @@ import { Camera, CameraResultType } from '@capacitor/camera';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
+
+
 export class CameraPage{
   imageSrc?: string
  takePicture = async () => {
@@ -20,6 +23,11 @@ export class CameraPage{
      resultType: CameraResultType.Uri
    });
    this.imageSrc = image.webPath
+ }
+constructor(private router: Router) {
+}
+ nextButton() {
+      this.router.navigate(['tabs/geolocation'])
  }
 
 }
