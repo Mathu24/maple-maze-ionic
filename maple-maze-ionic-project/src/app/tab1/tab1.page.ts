@@ -29,13 +29,13 @@ export class Tab1Page {
   }
 
 
-  public alertButtons: string[] = ['Weiter'];
+  public alertButtons: string[] = ['Weiter', ];
   public alertInputs: any[] = [
     {
       placeholder: 'Spielername',
     },
   ];
-  
+
 
   nextCameraButton() {
     this.router.navigate(['camera'])

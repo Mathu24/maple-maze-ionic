@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>camera</ion-title>
+    <ion-title id="title">MAPLE MAZE</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,12 +11,16 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <ion-button (click)="takePicture()">Bild aufnehmen</ion-button>
 
+    <h3 id="scanMe">Scan Me!</h3>
+    <h1 id="scanmeText">"Hunger stillen, folge Pfad,
+      wo Codes blinken. Scan, genieße!"</h1>
 
-    <ion-img [src]="imageSrc" *ngIf="imageSrc"></ion-img>
-
-    <ion-button shape="round" (click)="nextButton()">Weiter</ion-button>
+    <div class="button-container">
+      <ion-button id="takePicture" shape="round" color="danger" (click)="takePicture()">Bild Aufnehmen</ion-button>
+      <ion-img [src]="imageSrc" *ngIf="imageSrc"></ion-img>
+      <ion-button id="continueButton" shape="round" color="danger" (click)="nextButton()">Weiter</ion-button>
+    </div>
 
   </ion-content>
 

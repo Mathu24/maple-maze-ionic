@@ -1,0 +1,40 @@
+#printCurrentPositionButton,
+#continueButton {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+  width: 15%;
+}
+
+
+#title {
+  font-family: "Calibri", sans-serif;
+  font-size: 40px;
+  color: #ff67b2;
+  font-weight: bolder;
+  text-align: center;
+}
+
+#geoLocation {
+  font-family: "Calibri", sans-serif;
+  font-size: 34px;
+  color: #6E4F42;
+  font-weight: bolder;
+  text-align: center;
+}
+
+#geolocationText {
+  font-family: "Calibri", sans-serif;
+  font-size: 23px;
+  color: #6E4F42;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30%;
+}
