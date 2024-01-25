@@ -35,6 +35,7 @@ export class Tab1Page {
       placeholder: 'Spielername',
     },
   ];
+  
 
   nextCameraButton() {
     this.router.navigate(['camera'])

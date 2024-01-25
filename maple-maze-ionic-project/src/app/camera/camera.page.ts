@@ -16,11 +16,11 @@ import {Router} from "@angular/router";
 
 export class CameraPage {
   imageSrc?: string;
-  private router: any;
+  /*private router: any;*/
 
-  constructor(private alertController: AlertController) {}
+  constructor(private alertController: AlertController, private router: Router) {}
 
-  async takePicture() {
+    async takePicture() {
     const alert = await this.alertController.create({
       header: 'Kamerazugriff',
       message: 'Möchten Sie der App Zugriff auf Ihre Kamera gewähren?',
@@ -52,6 +52,7 @@ export class CameraPage {
 
     this.imageSrc = image.webPath;
   }
+
   nextButton() {
     this.router.navigate(['tabs/geolocation'])
   }

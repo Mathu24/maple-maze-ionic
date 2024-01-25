@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import {AlertController, IonicModule} from '@ionic/angular';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-battery',
@@ -15,7 +16,10 @@ export class BatteryPage {
   batteryLevel: number | undefined;
   private Battery: any;
 
-  constructor() {}
+  constructor(private alertController: AlertController, private router: Router) {}
+  nextButton() {
+    this.router.navigate(['tabs/walk'])
+  }
 
   async checkBatteryStatus() {
     const [batteryStatus] = await Promise.all([this.Battery.getStatus()]);

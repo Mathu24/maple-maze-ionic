@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import {AlertController, IonicModule} from '@ionic/angular';
 import { Geolocation } from '@capacitor/geolocation';
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-geolocation',
@@ -12,11 +14,16 @@ import { Geolocation } from '@capacitor/geolocation';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 
-export class GeolocationPage implements OnInit {
+export class GeolocationPage implements OnInit  {
   distanceToTarget: number | null = null;
 
+  constructor(private alertController: AlertController, private router: Router) {}
+  nextButton() {
+    this.router.navigate(['tabs/battery'])
+  }
+
+
   ngOnInit(): void {
-// Implementieren Sie hier ggf. Initialisierungscode
   }
 
   async printCurrentPosition() {
@@ -65,6 +72,5 @@ export function haversineDistance(
   const distance = R * c;
 
   return distance; // in meters
-
 
 }
