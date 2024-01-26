@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Geolocation</ion-title>
+    <ion-title id="title">MAPLE MAZE</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,11 +11,18 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-button shape="round" (click)="printCurrentPosition()">Location</ion-button>
+  <h3 id="geoLocation">Where am I?</h3>
+  <h1 id="geolocationText">Ping? Pong!</h1>
 
   <ion-card *ngIf="distanceToTarget !== null">
     <ion-card-content>
       <p>Distance to target: {{ distanceToTarget.toFixed(2) }} meters</p>
     </ion-card-content>
   </ion-card>
+
+<div class="button-container">
+  <ion-button id="printCurrentPositionButton" shape="round" color="danger"  (click)="printCurrentPosition()">Location</ion-button>
+  <ion-button id="continueButton" shape="round" color="danger" (click)="nextButton()">Weiter</ion-button>
+  </div>
+
 </ion-content>

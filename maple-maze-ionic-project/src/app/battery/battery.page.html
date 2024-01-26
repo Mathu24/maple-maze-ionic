@@ -1,13 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Batterie
+    <ion-title id="title">
+      MAPLE MAZE
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="checkBatteryStatus()">Check</ion-button>
+
+  <h3 id="battery">What a Nightmare!</h3>
+  <h1 id="batteryText">Oh nein, wir haben ken Akku mehr!</h1>
 
   <ion-item *ngIf="isCharging !== undefined">
     <ion-label>Ladezustand:</ion-label>
@@ -18,4 +20,10 @@
     <ion-label>Batteriestand:</ion-label>
     <ion-text>{{ batteryLevel }}%</ion-text>
   </ion-item>
+
+<div class="button-container">
+  <ion-button id="checkBatteryStatusButton" shape="round" color="danger" (click)="checkBatteryStatus()">Check</ion-button>
+  <ion-button id="continueButton" shape="round" color="danger" (click)="nextButton()">Weiter</ion-button>
+  </div>
+
 </ion-content>

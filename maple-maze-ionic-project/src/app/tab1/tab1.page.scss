@@ -1,7 +1,23 @@
-#startAlert {
-  font-weight: bold;
-}
-
+#startAlert,
 #leaderboardButton {
   font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+  width: 15%;
+}
+
+#title {
+  font-family: "Calibri", sans-serif;
+  font-size: 40px;
+  color: #ff67b2;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
 }
