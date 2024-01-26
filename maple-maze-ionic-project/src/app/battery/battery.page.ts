@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {AlertController, IonicModule} from '@ionic/angular';
 import {Router} from "@angular/router";
+import {Haptics, ImpactStyle} from "@capacitor/haptics";
+
 
 @Component({
   selector: 'app-battery',
@@ -17,8 +19,9 @@ export class BatteryPage {
   private Battery: any;
 
   constructor(private alertController: AlertController, private router: Router) {}
-  nextButton() {
+  async nextButton() {
     this.router.navigate(['tabs/walk'])
+    await Haptics.impact({style: ImpactStyle.Medium});
   }
 
   async checkBatteryStatus() {

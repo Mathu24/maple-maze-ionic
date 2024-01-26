@@ -5,6 +5,7 @@ import {AlertController, IonicModule} from '@ionic/angular';
 import {Camera, CameraResultType, CameraSource} from '@capacitor/camera';
 import {Router} from "@angular/router";
 import { Barcode, BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
 
 @Component({
   selector: 'app-camera',
@@ -33,8 +34,8 @@ export class CameraPage {
         },
         {
           text: 'Zustimmen',
-          handler: () => {
-            this.captureImage();
+          handler: async () => {
+            this.captureImage()
           },
         },
       ],
@@ -54,8 +55,10 @@ export class CameraPage {
     this.imageSrc = image.webPath;
   }
 
-  nextButton() {
+  async nextButton() {
     this.router.navigate(['tabs/geolocation'])
+    await Haptics.impact({style: ImpactStyle.Medium});
+
   }
 
 }

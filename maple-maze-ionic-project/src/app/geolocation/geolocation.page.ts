@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import {AlertController, IonicModule} from '@ionic/angular';
 import { Geolocation } from '@capacitor/geolocation';
 import {Router} from "@angular/router";
-
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
 
 @Component({
   selector: 'app-geolocation',
@@ -18,8 +18,9 @@ export class GeolocationPage implements OnInit  {
   distanceToTarget: number | null = null;
 
   constructor(private alertController: AlertController, private router: Router) {}
-  nextButton() {
+  async nextButton() {
     this.router.navigate(['tabs/battery'])
+    await Haptics.impact({style: ImpactStyle.Medium});
   }
 
 
