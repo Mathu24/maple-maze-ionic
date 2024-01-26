@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title id="title">MAPLE MAZE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <h2 id="finishText">Glückwunsch, Sie haben die Schnitzeljagd beendet!</h2>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Fertig</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="button-container">
+    <ion-button id="leaderboardButton" shape="round" color="danger" (click)="openLeaderboard()">LEADERBOARD</ion-button>
+    <ion-button id="homeButton" shape="round" color="danger" (click)="homeButton()">HOME</ion-button>
+  </div>
+
+</ion-content>

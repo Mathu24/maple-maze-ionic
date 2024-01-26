@@ -32,6 +32,16 @@ export const routes: Routes = [
           import('../walk/walk.page').then((m) => m.WalkPage),
       },
       {
+        path: 'fertig',
+        loadComponent: () =>
+          import('../fertig/fertig.page').then((m) => m.FertigPage),
+      },
+      {
+        path: 'leaderboard',
+        loadComponent: () =>
+          import('../leaderboard/leaderboard.page').then((m) => m.LeaderboardPage),
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full',

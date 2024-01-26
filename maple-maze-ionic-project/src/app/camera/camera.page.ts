@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import {AlertController, IonicModule} from '@ionic/angular';
 import {Camera, CameraResultType, CameraSource} from '@capacitor/camera';
 import {Router} from "@angular/router";
+import { Barcode, BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
 
 @Component({
   selector: 'app-camera',

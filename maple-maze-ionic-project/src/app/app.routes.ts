@@ -25,5 +25,13 @@ export const routes: Routes = [
     path: 'walk',
     loadComponent: () => import('./walk/walk.page').then( m => m.WalkPage)
   },
+  {
+    path: 'fertig',
+    loadComponent: () => import('./fertig/fertig.page').then( m => m.FertigPage)
+  },
+  {
+    path: 'leaderboard',
+    loadComponent: () => import('./leaderboard/leaderboard.page').then( m => m.LeaderboardPage)
+  },
 
 ];
